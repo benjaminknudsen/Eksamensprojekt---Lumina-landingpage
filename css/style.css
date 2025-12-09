@@ -1,0 +1,617 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Arial, sans-serif;
+  font-size: 16px;
+}
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+/* --- NAVBAR --- */
+/* Fjerne "backdrop-filter:blur" for at gøre topnav bar gennemsigtig uden blur effekt */
+#topNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+/* Fjernet topnav.scrolled for at fjerne den hvide topnav bar. */
+
+#topNav img {
+  cursor: pointer;
+  transition: transform 0.16s ease, filter 0.16s ease,
+    background-color 0.16s ease;
+}
+
+#topNav .nav-logo {
+  height: 60px;
+  justify-content: center;
+}
+
+/* Hover effekt på søgefelt og burgermenu */
+.nav-burger,
+.nav-search {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.nav-burger {
+  height: 34px;
+}
+
+.nav-search {
+  height: 42px;
+  align-self: flex-end;
+  padding-bottom: 0;
+}
+/* Burger menu hover */
+.nav-burger:hover,
+.nav-burger:focus,
+.nav-search:hover,
+.nav-search:focus {
+  transform: translateY(-3px) scale(1.06);
+  background-color: rgba(255, 255, 255, 0.06);
+  filter: brightness(1.03);
+  outline: none;
+}
+
+.nav-burger:focus,
+.nav-search:focus {
+  box-shadow: 0 0 0 3px rgba(153, 65, 59, 0.12);
+}
+
+/* -- SØGEFELT STYLING -- */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: width 0.3s ease;
+}
+
+.search-icon {
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+/* JS søgefelt styling */
+.search-input {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 42px;
+  padding: 0;
+  border: none;
+  background: rgba(195, 196, 196, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 21px;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  opacity: 0;
+  transition: all 0.3s ease;
+  outline: none;
+}
+/* "Søg" når man har trykket på søgefelt farve */
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+/* søgefelt vidde, padding og synlighed */
+.search-container.active .search-input {
+  width: 280px;
+  padding: 0 20px 0 20px;
+  opacity: 1;
+}
+
+.search-container.active .search-icon {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Ændrer denne værdi for at justere mellemrum mellem personikon og kurvikon i topnav */
+}
+
+/* --- HERO SEKTION  */
+/* Hero video*/
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: visible;
+}
+
+.hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Hero tekst (LUMINA + ONE) */
+.hero-text,
+.hero-bottom-text {
+  position: absolute;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+/* lumina hero center tekst */
+.hero-text {
+  z-index: 1;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-family: sans-serif;
+  margin: 0.5rem 0;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+/* --- PRIS OG KØB NU KNAP --- */
+/* Wrapper for pris og CTA ved siden af hinanden */
+.price-button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 5rem; /* Øget fra 1rem til 2.5rem for at rykke pris og knap ned */
+  /* Flex end for at pris og CTA aligner med teksten over fra højre side og ikke venstre */
+  justify-content: flex-end;
+}
+
+/* Ny CTA knap som erstatter billedet images/KØB NU.png) */
+.buy-now {
+  display: inline-block;
+  background: #99413b;
+  color: #f6f6f6;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+/* Hover på Call to action knap */
+.buy-now:hover,
+.buy-now:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  opacity: 0.98;
+  outline: none;
+}
+
+.buy-now:active {
+  transform: translateY(0);
+}
+
+.hero-text .p1 {
+  font-size: 3rem;
+  font-family: "Judson", sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  margin: -1rem 0 0.5rem 0; /* Negativ top margin flytter "ONE" tættere på "LUMINA" */
+  letter-spacing: 0.05em;
+}
+
+/* Karrusel */
+.hero-bottom-text {
+  position: absolute; /* Placerer karrusellen under hero sektionen */
+  bottom: -90px;
+  left: 0;
+  display: flex;
+  gap: 0;
+  font-size: 1.2rem;
+  height: 60px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  overflow-x: auto; /* Tillader horisontal scrolling */
+  overflow-y: hidden; /* Skjuler vertikal scrolling */
+  scroll-snap-type: x mandatory; /* Snapper til hver kasse når man scroller */
+  scrollbar-width: none; /* Skjuler scrollbar i Firefox */
+  z-index: 100;
+  padding: 0;
+}
+
+/* Support, gratis fragt og garanti sættes i kasser */
+.hero-bottom-text span {
+  flex: 0 0 auto; /* Forhindrer kasserne i at shrink - beholder deres størrelse */
+  min-width: 300px; /* Minimum bredde for hver kasse */
+  white-space: nowrap;
+  text-align: center;
+  padding: 3rem 6rem;
+  background: #e3e3d0;
+  color: #101010;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  scroll-snap-align: start; /* Snapper til starten af hver kasse */
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+/* Hover effekt på kasser med "Suppport" "Gratis fragt" og "Garanti"  */
+.hero-bottom-text span:hover {
+  transform: scaleX(1.1);
+  background: #e3e3d0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+main {
+  position: relative;
+  background: #e3e3d0;
+  color: #000;
+  padding: 1rem;
+  padding-top: 80px;
+  z-index: 1;
+}
+
+/*Icon Specifications*/
+/* For at ligge dem op ad hinanden i venstre side fjerner jeg justify-content: space-around og tilføjer center og laver et gap på 0.5 rem*/
+/* #IS refererer til et id i html */
+#IS {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: -2.5rem;
+  margin-bottom: 6rem;
+  gap: 0.5rem;
+  padding-left: 15px;
+}
+
+#IS img {
+  height: 45px;
+  width: 50px;
+  object-fit: contain;
+}
+
+/* HVAD VORES KUNDER SIGER */
+/* kundebilleder */
+#customers {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem 20px;
+  margin-bottom: 6rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+/* Overskrift før kundebilleder */
+#customers::before {
+  content: "";
+  position: absolute;
+  top: -15rem;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+h3 + #customers {
+  margin-top: 4rem;
+}
+
+section#IS + h3 {
+  text-align: center;
+  padding-left: 0;
+  margin-top: 3rem;
+  font-size: 40px;
+}
+
+.customer-item {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  position: relative;
+}
+/* laver 3 childs for at give forskellige layouts til hver kunde da jeg ville lave et zigzag mønster. */
+/* Det refererer til class=customer-item i html */
+.customer-item:nth-child(1) {
+  justify-content: flex-start;
+  margin-left: 5%;
+}
+
+.customer-item:nth-child(2) {
+  justify-content: flex-end;
+  margin-right: 5%;
+  flex-direction: row-reverse;
+  /* bruger padding-left fordi tekstboksen ellers bliver strukket og skifter linjer for ofte */
+  padding-left: 225px;
+}
+
+.customer-item:nth-child(3) {
+  justify-content: flex-start;
+  margin-left: 5%;
+}
+
+#customers img {
+  width: 350px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 150px;
+  flex-shrink: 0;
+}
+/* Tekstboks styling */
+.customer-text {
+  background: #eec3c0;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  max-width: 500px;
+  position: relative;
+  box-shadow: #00000033 0px 4px 16px;
+}
+/* Tekst i tekstboks styling */
+.customer-text p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2d2d2d;
+}
+
+.customer-name {
+  margin-top: 0.8rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* De 4 speakerfarver */
+#photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  padding: 20px;
+  text-align: center;
+}
+
+#photos img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Hover effekt på card components */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+#photos img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/*Specifikationer tekst*/
+h3 {
+  padding-top: 3rem;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 0.5rem;
+  font-size: 25px;
+}
+
+/*Logoet over om os sektionen*/
+#minilogo {
+  display: flex;
+  justify-content: center;
+}
+
+#minilogo img {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Om os + specifikationer tekst venstre alignment */
+/* text-align er nu :left i stedet for center; samt justify-content:center og display: flex også er blevet fjernet */
+p.p2 {
+  text-align: left;
+  /* lidt bredere max-width så teksten kan brække på færre linjer */
+  max-width: 900px;
+  margin: 0 20px 4rem 20px;
+  /* tættere linjehøjde for at samle teksten på færre linjer uden at miste læsbarhed */
+  line-height: 2;
+  font-size: 1.04rem;
+  /* Længere afstand mellem lumina logo og tekst */
+  margin-top: 1rem;
+}
+
+/*Centered stack (Coming soon speaker billeder)*/
+.centered-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+/* Tynde linjer over og under "kommer snart" sektionen (samme stil som over footeren) */
+.centered-stack::before,
+.centered-stack::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+.centered-stack::before {
+  /* Midt i afstanden mellem det over og denne sektion: 6rem gap -> 3rem */
+  top: -3rem;
+}
+
+.centered-stack::after {
+  /* Midt i afstanden mellem denne sektion og elementerne under: 6rem gap -> 3rem */
+  bottom: -3rem;
+}
+
+.centered-stack article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  background-color: #e3e3d0;
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 3rem 4rem;
+  color: #000;
+  align-items: flex-start;
+}
+
+/* Linje mellem "kommer snart" banner og footer */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+/* Laver flex på footeren så der er 3 kolonner */
+.footer article {
+  flex: 1 1 1;
+  max-width: 360px;
+}
+
+/* Footer overskrifter */
+.footer h4 {
+  font-size: 22px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 800;
+}
+
+/*copy right tekst*/
+#bunden {
+  background-color: #e3e3d0;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Footer item styling */
+.footer p,
+.footer a {
+  display: block;
+  margin: 0.6rem 0;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* Social ikoner */
+/* Her bruges child(3) for at vælge den 3. kolonne i footeren, altså lumina socials. */
+/* Den 3. kolonne har billeder i form af ikoner, og derfor sikrer det at kun ikonerne får den styling */
+.footer article:nth-child(3) img {
+  height: 28px;
+  width: auto;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+}
+
+/* Back to top knap styling */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #99413b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+/* Back to top hover */
+.back-to-top:hover {
+  background: #7d342f;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+/* Back to top knap gøres helt synlig med 1 opacity */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+/* Tilpasser layoutet til forskellige skærmstørrelser */
+@media (max-width: 600px) {
+  body {
+    background-color: #e3e3d0;
+  }
+  #photos {
+    display: block; /* Ændrer produkt billeder fra 2x2 grid til at blive stablet vertikalt */
+  }
+}
+
+/* TABLET - Skærme mellem 601px og 1024px bred (iPads, tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    background-color: #e3e3d0;
+  }
+  #photos {
+    display: block; /* Ændrer produkt billeder fra 2x2 grid til vertikal stabling */
+  }
+}

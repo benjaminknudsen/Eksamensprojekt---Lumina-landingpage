@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lumina</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google fonts font ændret fra serif til sans serif -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- this is the navigation/top bar -->
+    <nav id="topNav">
+      <a>
+        <!-- tilføjet ny burgermenu ikon samt tilføjet en class så jeg kan lave hovet effekt -->
+        <img
+          src="images/sortburgermenu.png"
+          alt="new burger menu"
+          class="nav-burger"
+        />
+      </a>
+      <!--nav logo -->
+      <a>
+        <img
+          class="nav-logo"
+          src="images/logolumina.png"
+          alt="Logo Lumina in the middle of the top nav"
+        />
+      </a>
+      <!-- top nav logos. tilføjet ny søgefunktion ikon samt tilføjet en class så jeg kan lave hover effekt -->
+      <div class="nav-right">
+        <!-- Søgefelt container -->
+        <div class="search-container">
+          <img
+            src="images/soegefunktion.png"
+            alt="search function"
+            class="nav-search search-icon"
+            id="searchIcon"
+          />
+          <input
+            type="text"
+            class="search-input"
+            id="searchInput"
+            placeholder="Søg"
+            aria-label="Søgefelt"
+          />
+        </div>
+        <div class="nav-icons">
+          <img src="images/littleFella.png" alt="login" />
+          <img src="images/shoppingCart.png" alt="basket" />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header med hero video -->
+    <header class="hero">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="/images/Video.mp4" type="video/mp4" />
+      </video>
+      <!-- Header tekst og billede -->
+      <section class="hero-text">
+        <h1>LUMINA</h1>
+        <p class="p1">ONE</p>
+        <p>Én højtaler. Uendelige øjeblikke</p>
+        <!-- Lavet en wrapper for at kunne placere pris og CTA ved siden af hinanden -->
+        <div class="price-button-wrapper">
+          <p class="price">1995,-</p>
+          <!-- Ændrede call to action fra at være et billede til en knap man kan ændre på i css -->
+          <a href="#" class="buy-now" role="button" aria-label="Køb nu"
+            >KØB NU</a
+          >
+        </div>
+      </section>
+
+      <!-- Hero bottom text -->
+      <p class="hero-bottom-text">
+        <span>SUPPORT</span>
+        <span>GRATIS FRAGT</span>
+        <span>GARANTI</span>
+        <span>LUMINA SOCIALS</span>
+        <span>HVAD VORES KUNDER SIGER</span>
+      </p>
+    </header>
+
+    <!-- Billeder og logoer -->
+    <main>
+      <!-- 4 farver højtalere cards -->
+      <!-- Erstatter de gamle billeder med de nye cards af de forskellige farver højtalere-->
+      <section id="photos">
+        <img
+          src="images/dustyrosecard.png"
+          alt="a picture of our dusty rose speaker with a cup og coffee"
+        />
+        <img
+          src="images/moonlightwhitecard.png"
+          alt="a picture of our moonlight white speaker"
+        />
+        <img
+          src="images/sagegreencard.png"
+          alt="a picture of our Sage Green speaker at the beach"
+        />
+        <img
+          src="images/lavendermistcard.png"
+          alt="a picture of our Lavender Mist speaker with a girl doing yoga"
+        />
+      </section>
+
+      <!-- Specificationer -->
+      <h3>Specifikationer</h3>
+      <p class="p2">
+        Lydstyrke: Op til 100 dB <br />
+        Lysstemning: Integreret ambient-lys (kan tilpasses: fx "chill", "party",
+        "sunset" mode). <br />
+        Vægt: Kun 4,5 kg <br />
+        Batteritid: Op til 18 timers spilletid – genopladeligt batteri via
+        USB-C. <br />
+        Tilslutning: Bluetooth 5.3, AUX-indgang og mulighed for at parre op til
+        3 andre LUMINA One enheder. <br />
+        Social Connect: Funktion der gør det nemt at "blende" din playliste med
+        andres via app'en <br />
+        IPX5 vandafvisende – tåler lidt regn og pool-splash.
+      </p>
+      <section id="IS">
+        <img src="images/trustpilotstjerne.png" alt="Trustpilot star logo" />
+        <img src="images/batteri.png" alt="battery logo" />
+        <img src="images/waterprooficon.png" alt="Waterproof logo" />
+        <img src="images/bluetoothicon.png" alt="Bluetooth logo" />
+      </section>
+
+      <!-- Hvad vores kunder siger billeder og tekstbokse -->
+      <h3>Hvad vores kunder siger</h3>
+      <section id="customers">
+        <article class="customer-item">
+          <img src="images/sofiekunde.png" alt="Sofie customer" />
+          <div class="customer-text">
+            <p>
+              "Jeg elsker, at jeg kan tage LUMINA One med overalt. Den ser smuk
+              ud i min lejlighed, men den er også perfekt til picnic med
+              veninderne."
+            </p>
+            <p class="customer-name">— Sofie, 24</p>
+          </div>
+        </article>
+        <article class="customer-item">
+          <img src="images/laurakunde.png" alt="Laura customer" />
+          <div class="customer-text">
+            <p>
+              "Den er så let og elegant! Jeg havde den med på festival, og den
+              holdt både til en hel dag og nat. Plus, hver gang vi satte vores
+              'venneplayliste' på."
+            </p>
+            <p class="customer-name">— Laura, 21</p>
+          </div>
+        </article>
+        <article class="customer-item">
+          <img src="images/emmakunde.png" alt="Emma customer" />
+          <div class="customer-text">
+            <p>
+              "Jeg valgte den på grund af designet – men blev helt forelsket i
+              lyden. Det er virkelig den perfekte følgesvend til yoga, slow
+              mornings og hyggelige venaftner."
+            </p>
+            <p class="customer-name">— Emma, 31</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Kommer snart billeder -->
+      <section class="centered-stack">
+        <article>
+          <img
+            src="images/luminaultrakommersnart.png"
+            alt="new lumina speeker out soon little"
+          />
+        </article>
+        <article>
+          <img
+            src="images/kommersnartslim.png"
+            alt="New speeker comes out in slim"
+          />
+        </article>
+      </section>
+
+      <!-- mini logo under kategori billeder -->
+      <section id="minilogo">
+        <img
+          src="images/logolumina.png"
+          alt="Little logo under categories pictures"
+        />
+      </section>
+
+      <!-- About us tekst -->
+      <p class="p2">
+        Lumina Audio er et nordisk lydbrand med fokus på stil, fællesskab og
+        funktionalitet. Vi laver højttalere, der kombinerer kraftfuld lyd med et
+        æstetisk design, der elsker musik, fester, picnic i parken, yoga på
+        stranden og hyggelige sammenkomster&nbsp;–&nbsp;uden at gå på kompromis
+        med hverken lyd eller look.
+      </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <article>
+        <h4>KUNDESERVICE</h4>
+        <p>Kontakt os</p>
+        <p>Levering og forsendelse</p>
+        <p>Produktsupport</p>
+        <p>FAQ</p>
+      </article>
+
+      <!--footer tekst-->
+      <article>
+        <h4>MODEL KATEGORI</h4>
+        <p>Lumina ONE</p>
+        <p>Lumina ULTRA (Kommer snart)</p>
+        <p>Lumina SLIM (Kommer snart)</p>
+      </article>
+
+      <!--footer symbols-->
+      <article>
+        <h4>LUMINA SOCIALS</h4>
+        <img src="images/instagram.png" alt="instagram logo" />
+        <img src="images/facebook.png" alt="facebook logo" />
+        <img src="images/youtubeicon.png" alt="youtube logo" />
+        <img src="images/trustpiloticon.png" alt="Trustpilot logo" />
+      </article>
+    </footer>
+
+    <!--Ændret til kun Benjamin :) -->
+    <p id="bunden">&copy; Benjamin - 2025</p>
+
+    <!-- Back to top knap -->
+    <button id="backToTop" class="back-to-top" aria-label="Tilbage til toppen">
+      ↑
+    </button>
+
+    <script>
+      // SØGEFELT FUNKTIONALITET
+      // Finder søge-elementerne i HTML
+      const searchIcon = document.getElementById("searchIcon"); // Søgeikonet
+      const searchInput = document.getElementById("searchInput"); // Input feltet
+      const searchContainer = document.querySelector(".search-container"); // Container der holder begge dele
+
+      // Når man klikker på søgeikonet
+      searchIcon.addEventListener("click", () => {
+        searchContainer.classList.toggle("active"); // Toggle "active" klasse on/off
+        // Hvis "active" klassen er tilføjet (søgefeltet er åbent)
+        if (searchContainer.classList.contains("active")) {
+          searchInput.focus(); // Sætter cursor i søgefeltet automatisk
+        }
+      });
+
+      // LUK SØGEFELTET NÅR MAN KLIKKER UDENFOR
+      // Lytter efter alle klik på hele dokumentet
+      document.addEventListener("click", (e) => {
+        // Hvis klikket IKKE er indenfor søgecontaineren
+        if (!searchContainer.contains(e.target)) {
+          searchContainer.classList.remove("active"); // Luk søgefeltet
+        }
+      });
+
+      // BACK TO TOP KNAP FUNKTIONALITET
+      // Finder back to top knappen
+      const backToTopBtn = document.getElementById("backToTop");
+
+      // Lytter efter scroll events for at vise/skjule knappen
+      window.addEventListener("scroll", () => {
+        // Hvis brugeren har scrollet mere end 300 pixels ned
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add("show"); // Vis knappen
+        } else {
+          backToTopBtn.classList.remove("show"); // Skjul knappen
+        }
+      });
+
+      // Når man klikker på back to top knappen
+      backToTopBtn.addEventListener("click", () => {
+        // Scroll til toppen af siden
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // Smooth animation i stedet for instant jump
+        });
+      });
+    </script>
+  </body>
+</html>
